@@ -14,7 +14,7 @@ function Navbar() {
               <span className="line line3"></span>
             </label>
             <div className="logo">
-              <h1>Navbar</h1>
+              <h1>LAW-LA</h1>
             </div>
             <div className="menu-items">
               <ul>

@@ -1,4 +1,6 @@
 /* Reset default margin and padding */
+
+/*prompt css*/
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +21,7 @@
 }
 
 .chatbot-container {
-  max-width: 400px;
+  max-width: 500px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -44,24 +46,26 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
+  color:black;
 }
 
 .user-input button {
   padding: 8px 16px;
-  background-color: #0084ff;
-  color: #fff;
-  border: none;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .user-input button:hover {
-  background-color: #005aa7;
+  color:white;
+  background-color: black;
 }
 
 
-
+/*navbar css*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .container {
