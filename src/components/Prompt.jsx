@@ -17,71 +17,67 @@ function Prompt() {
 
   const handleSendClick = () => {
     setDisplayMessage(true)
+    setOutput("Sample")
 
 
-    let answer = ""
+//  ***************LLM CODE*****************
+//     let answer = ""
   
-  var data = {
-    question:message
-}
+//   var data = {
+//     question:message
+// }
 
-var json = JSON.stringify(data);
+// var json = JSON.stringify(data);
 
-fetch("https://cbce-34-125-187-64.ngrok-free.app/generate", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
+// fetch("https://cbce-34-125-187-64.ngrok-free.app/generate", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//     "Accept": "application/json",
     
-  },
-  // mode:"no-cors",
-  body: json
-})
-.then(response => {
-    // Check if the response is OK
-    if (!response.ok) {
-      throw new Error('Network error');
-    }
-    // Get the response body as a ReadableStream
-    const stream = response.body;
-    // Get a reader for the stream
-    const reader = stream.getReader();
-    // Define a function to read the chunks recursively
-    function readChunk() {
-      // Read a chunk from the stream
-      reader.read().then(({ value, done }) => {
-        // Check if the stream is done
-        if (done) {
-          // Close the reader
-          reader.releaseLock();
-          // Return from the function
-          return;
-        }
-        // Process the chunk as JSON
-        const token = value;
-        const decoder = new TextDecoder("utf-8");
-        const text = decoder.decode(token);
-        // Do something with the token
-        console.log(text)
-        answer += text
-        setOutput(answer)
-        // Read the next chunk
-        readChunk();
-      });
-    }
-    // Start reading the first chunk
-    readChunk();
-  })
-  .catch(error => {
-    // Handle the error
-    console.error(error);
-  });
+//   },
 
-
-
-
-
+//   body: json
+// })
+// .then(response => {
+    
+//     if (!response.ok) {
+//       throw new Error('Network error');
+//     }
+    
+//     const stream = response.body;
+    
+//     const reader = stream.getReader();
+   
+//     function readChunk() {
+   
+//       reader.read().then(({ value, done }) => {
+       
+//         if (done) {
+        
+//           reader.releaseLock();
+         
+//           return;
+//         }
+      
+//         const token = value;
+//         const decoder = new TextDecoder("utf-8");
+//         const text = decoder.decode(token);
+       
+//         console.log(text)
+//         answer += text
+//         setOutput(answer)
+      
+//         readChunk();
+//       });
+//     }
   
+//     readChunk();
+//   })
+//   .catch(error => {
+   
+//     console.error(error);
+//   });
     };
 
   const handleKeyPress = (e) => {
